@@ -1,18 +1,18 @@
 package net.irisshaders.iris.mixin.forge;
 
-import net.irisshaders.iris.mixin.LevelRendererAccessor;
-import net.irisshaders.iris.shadows.ShadowRenderer;
-import net.minecraft.client.Camera;
-import org.checkerframework.checker.units.qual.A;
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.MethodHandles;
+import java.lang.invoke.MethodType;
+
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.lang.invoke.MethodHandle;
-import java.lang.invoke.MethodHandles;
-import java.lang.invoke.MethodType;
+import net.irisshaders.iris.mixin.LevelRendererAccessor;
+import net.irisshaders.iris.shadows.ShadowRenderer;
+import net.minecraft.client.Camera;
 
 @Mixin(ShadowRenderer.class)
 public class MixinShadowRenderer {

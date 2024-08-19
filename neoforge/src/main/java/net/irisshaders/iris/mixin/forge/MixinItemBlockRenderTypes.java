@@ -1,21 +1,20 @@
 package net.irisshaders.iris.mixin.forge;
 
-import net.irisshaders.iris.Iris;
-import net.irisshaders.iris.shaderpack.materialmap.BlockMaterialMapping;
-import net.irisshaders.iris.shaderpack.materialmap.BlockRenderType;
-import net.irisshaders.iris.shaderpack.materialmap.WorldRenderingSettings;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.client.ChunkRenderTypeSet;
+import java.util.Map;
+
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import java.util.Map;
+import net.irisshaders.iris.shaderpack.materialmap.BlockMaterialMapping;
+import net.irisshaders.iris.shaderpack.materialmap.BlockRenderType;
+import net.irisshaders.iris.shaderpack.materialmap.WorldRenderingSettings;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.client.ChunkRenderTypeSet;
 
 @Mixin(ItemBlockRenderTypes.class)
 public class MixinItemBlockRenderTypes {

@@ -19,8 +19,8 @@ import com.seibel.distanthorizons.api.methods.events.abstractEvents.DhApiColorDe
 import com.seibel.distanthorizons.api.methods.events.sharedParameterObjects.DhApiCancelableEventParam;
 import com.seibel.distanthorizons.api.methods.events.sharedParameterObjects.DhApiEventParam;
 import com.seibel.distanthorizons.api.methods.events.sharedParameterObjects.DhApiRenderParam;
+import com.seibel.distanthorizons.api.objects.math.DhApiVec3f;
 import com.seibel.distanthorizons.coreapi.DependencyInjection.OverrideInjector;
-import com.seibel.distanthorizons.coreapi.util.math.Vec3f;
 import net.irisshaders.iris.Iris;
 import net.irisshaders.iris.api.v0.IrisApi;
 import net.irisshaders.iris.pipeline.WorldRenderingPipeline;
@@ -183,7 +183,7 @@ public class LodRendererEvents {
 			public void beforeRender(DhApiEventParam<EventParam> input) {
 				DHCompatInternal instance = getInstance();
 				if (instance.shouldOverride) {
-					Vec3f modelPos = input.value.modelPos;
+					DhApiVec3f modelPos = input.value.modelPos;
 					if (ShadowRenderingState.areShadowsCurrentlyBeingRendered()) {
 						instance.getShadowShader().bind();
 						instance.getShadowShader().setModelPos(modelPos);

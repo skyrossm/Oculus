@@ -1,17 +1,17 @@
 package net.irisshaders.iris.mixin.forge;
 
-import net.irisshaders.iris.Iris;
-import net.irisshaders.iris.api.v0.IrisApi;
-import net.irisshaders.iris.pathways.LightningHandler;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.texture.TextureAtlas;
-import net.minecraft.resources.ResourceLocation;
+import java.util.function.Function;
+
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Pseudo;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-import java.util.function.Function;
+import net.irisshaders.iris.Iris;
+import net.irisshaders.iris.api.v0.IrisApi;
+import net.irisshaders.iris.pathways.LightningHandler;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.resources.ResourceLocation;
 
 @Pseudo
 @Mixin(targets = "mekanism/client/render/entity/RenderFlame", remap = false)

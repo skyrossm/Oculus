@@ -1,14 +1,14 @@
 package net.irisshaders.iris.platform;
 
+import java.nio.file.Path;
+
+import org.apache.maven.artifact.versioning.DefaultArtifactVersion;
+
 import net.irisshaders.iris.Iris;
 import net.minecraft.client.KeyMapping;
 import net.neoforged.fml.loading.FMLLoader;
 import net.neoforged.fml.loading.FMLPaths;
 import net.neoforged.fml.loading.LoadingModList;
-import org.apache.maven.artifact.versioning.ArtifactVersion;
-import org.apache.maven.artifact.versioning.DefaultArtifactVersion;
-
-import java.nio.file.Path;
 
 public class IrisForgeHelpers implements IrisPlatformHelpers{
 	@Override

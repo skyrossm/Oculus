@@ -3,8 +3,8 @@ package net.irisshaders.iris.compat.dh;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.seibel.distanthorizons.api.DhApi;
 import com.seibel.distanthorizons.api.interfaces.override.rendering.IDhApiFramebuffer;
+import com.seibel.distanthorizons.api.objects.math.DhApiVec3f;
 import com.seibel.distanthorizons.coreapi.DependencyInjection.OverrideInjector;
-import com.seibel.distanthorizons.coreapi.util.math.Vec3f;
 import net.irisshaders.iris.Iris;
 import net.irisshaders.iris.api.v0.IrisApi;
 import net.irisshaders.iris.gl.IrisRenderSystem;
@@ -199,7 +199,7 @@ public class DHCompatInternal {
 		dhShadowFramebufferWrapper = null;
 	}
 
-	public void setModelPos(Vec3f modelPos) {
+	public void setModelPos(DhApiVec3f modelPos) {
 		solidProgram.bind();
 		solidProgram.setModelPos(modelPos);
 		translucentProgram.bind();

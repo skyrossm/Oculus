@@ -108,8 +108,9 @@ dependencies {
     }
     implementation(files(rootDir.resolve("custom_sodium").resolve("sodium-neoforge-1.20.6-0.6.0-snapshot+mc1.20.6-local-modonly.jar")))
 
-    compileOnly(files(rootDir.resolve("DHApi.jar")))
     compileOnly("maven.modrinth:immersiveengineering:11mMmtHT")
+    compileOnly(files(rootDir.resolve("DHApi.jar")))
+    testCompileOnly(files(rootDir.resolve("DHApi.jar")))
 }
 
 tasks.jarJar {
