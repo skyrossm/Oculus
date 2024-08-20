@@ -76,35 +76,35 @@ public class ShaderPackOptionList extends IrisContainerObjectSelectionList<Shade
 
 	private static final ResourceLocation MENU_LIST_BACKGROUND = new ResourceLocation("textures/gui/menu_background.png");
 
-	@Override
-	protected void renderListBackground(GuiGraphics pAbstractSelectionList0) {
-		if (screen.listTransition.getAsFloat() < 0.02f) return;
-		RenderSystem.enableBlend();
-		RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, screen.listTransition.getAsFloat());
-		pAbstractSelectionList0.blit(
-			MENU_LIST_BACKGROUND,
-			this.getX(),
-			this.getY() + 3,
-			(float)this.getRight(),
-			(float)(this.getBottom() + (int)this.getScrollAmount()),
-			this.getWidth(),
-			this.getHeight(),
-			32,
-			32
-		);
-
-		RenderSystem.disableBlend();
-		RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
-	}
-	@Override
-	protected void renderListSeparators(GuiGraphics pAbstractSelectionList0) {
-		RenderSystem.enableBlend();
-		RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, screen.listTransition.getAsFloat());
-		pAbstractSelectionList0.blit(CreateWorldScreen.HEADER_SEPARATOR, this.getX(), this.getY() + 2, 0.0F, 0.0F, this.getWidth(), 2, 32, 2);
-		pAbstractSelectionList0.blit(CreateWorldScreen.FOOTER_SEPARATOR, this.getX(), this.getBottom(), 0.0F, 0.0F, this.getWidth(), 2, 32, 2);
-		RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
-		RenderSystem.disableBlend();
-	}
+//	@Override
+//	protected void renderListBackground(GuiGraphics pAbstractSelectionList0) {
+//		if (screen.listTransition.getAsFloat() < 0.02f) return;
+//		RenderSystem.enableBlend();
+//		RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, screen.listTransition.getAsFloat());
+//		pAbstractSelectionList0.blit(
+//			MENU_LIST_BACKGROUND,
+//			this.getX(),
+//			this.getY() + 3,
+//			(float)this.getRight(),
+//			(float)(this.getBottom() + (int)this.getScrollAmount()),
+//			this.getWidth(),
+//			this.getHeight(),
+//			32,
+//			32
+//		);
+//
+//		RenderSystem.disableBlend();
+//		RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
+//	}
+//	@Override
+//	protected void renderListSeparators(GuiGraphics pAbstractSelectionList0) {
+//		RenderSystem.enableBlend();
+//		RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, screen.listTransition.getAsFloat());
+//		pAbstractSelectionList0.blit(CreateWorldScreen.HEADER_SEPARATOR, this.getX(), this.getY() + 2, 0.0F, 0.0F, this.getWidth(), 2, 32, 2);
+//		pAbstractSelectionList0.blit(CreateWorldScreen.FOOTER_SEPARATOR, this.getX(), this.getBottom(), 0.0F, 0.0F, this.getWidth(), 2, 32, 2);
+//		RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
+//		RenderSystem.disableBlend();
+//	}
 
 	public void addHeader(Component text, boolean backButton) {
 		this.addEntry(new HeaderEntry(this.screen, this.navigation, text, backButton));

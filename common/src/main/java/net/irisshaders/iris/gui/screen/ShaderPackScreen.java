@@ -90,9 +90,11 @@ public class ShaderPackScreen extends Screen implements HudHideable {
 			return 0.0f;
 		} else if (this.optionMenuOpen) {
 			return 0.1f;
-		} else {
-			return (float) this.minecraft.options.getMenuBackgroundBlurriness();
 		}
+		return 0.0f;
+//		} else {
+//			return (float) this.minecraft.options.getMenuBackgroundBlurriness();
+//		}
 	}, notifier);
 
 	public SmoothedFloat listTransition = new SmoothedFloat(1, 1, () -> {
@@ -157,7 +159,7 @@ public class ShaderPackScreen extends Screen implements HudHideable {
 				this.shaderPackList.render(guiGraphics, mouseX, mouseY, delta);
 			}
 		} else {
-			this.renderBlurredBackground(delta);
+//			this.renderBlurredBackground(delta);
 			this.showHideButton.render(guiGraphics, mouseX, mouseY, delta);
 		}
 
@@ -320,7 +322,7 @@ public class ShaderPackScreen extends Screen implements HudHideable {
 			);
 
 			showHideButton.setTooltip(Tooltip.create(showOrHide));
-			showHideButton.setTooltipDelay(Duration.ofSeconds(10));
+//			showHideButton.setTooltipDelay(Duration.ofSeconds(10));
 
 			this.addRenderableWidget(showHideButton);
 		}
@@ -359,23 +361,23 @@ public class ShaderPackScreen extends Screen implements HudHideable {
 		}
 	}
 
-	private void processFixedBlur(float tick) {
-		PostChain blurEffect = ((GameRendererAccessor) this.minecraft.gameRenderer).getBlurEffect();
-		float g = (float) Math.min(this.minecraft.options.getMenuBackgroundBlurriness(), this.blurTransition.getAsFloat());
-		float h = g * 10.0F;
-		if (blurEffect != null && h >= 1.0F) {
-			RenderSystem.enableBlend();
-			blurEffect.setUniform("Radius", h);
-			blurEffect.process(tick);
-			RenderSystem.disableBlend();
-		}
-	}
+//	private void processFixedBlur(float tick) {
+//		PostChain blurEffect = ((GameRendererAccessor) this.minecraft.gameRenderer).getBlurEffect();
+//		float g = (float) Math.min(this.minecraft.options.getMenuBackgroundBlurriness(), this.blurTransition.getAsFloat());
+//		float h = g * 10.0F;
+//		if (blurEffect != null && h >= 1.0F) {
+//			RenderSystem.enableBlend();
+//			blurEffect.setUniform("Radius", h);
+//			blurEffect.process(tick);
+//			RenderSystem.disableBlend();
+//		}
+//	}
 
-	@Override
-	protected void renderBlurredBackground(float pScreen0) {
-		processFixedBlur(pScreen0);
-		this.minecraft.getMainRenderTarget().bindWrite(false);
-	}
+//	@Override
+//	protected void renderBlurredBackground(float pScreen0) {
+//		processFixedBlur(pScreen0);
+//		this.minecraft.getMainRenderTarget().bindWrite(false);
+//	}
 
 	@Override
 	public void tick() {

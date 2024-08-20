@@ -35,7 +35,7 @@ public class MixinModelVertex {
 	 * @reason Rewrite
 	 */
 	@Overwrite
-	public static void writeQuadVertices(VertexBufferWriter writer, PoseStack.Pose matrices, ModelQuadView quad, float r, float g, float b, float a, float[] brightnessTable, boolean colorize, int[] light, int overlay) {
+	public static void writeQuadVertices(VertexBufferWriter writer, PoseStack.Pose matrices, ModelQuadView quad, float r, float g, float b, float[] brightnessTable, boolean colorize, int[] light, int overlay) {
 		Matrix3f matNormal = matrices.normal();
 		Matrix4f matPosition = matrices.pose();
 		MemoryStack stack = MemoryStack.stackPush();
@@ -43,7 +43,7 @@ public class MixinModelVertex {
 		try {
 			long buffer = stack.nmalloc(144);
 			long ptr = buffer;
-			int normal = MatrixHelper.transformNormal(matNormal, matrices.trustedNormals, quad.getLightFace());
+			int normal = MatrixHelper.transformNormal(matNormal, quad.getLightFace());
 
 			for (int i = 0; i < 4; ++i) {
 				float x = quad.getX(i);
@@ -71,7 +71,7 @@ public class MixinModelVertex {
 					fB = brightness * b;
 				}
 
-				color = ColorABGR.pack(fR, fG, fB, a);
+				color = ColorABGR.pack(fR, fG, fB, 1.0f);
 				ModelVertex.write(ptr, xt, yt, zt, color, quad.getTexU(i), quad.getTexV(i), overlay, light[i], normal);
 				ptr += 36L;
 			}

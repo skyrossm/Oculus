@@ -2,8 +2,6 @@ package net.irisshaders.batchedentityrendering.impl;
 
 import com.mojang.blaze3d.vertex.BufferBuilder;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.caffeinemc.mods.sodium.client.render.vertex.buffer.BufferBuilderExtension;
-import net.caffeinemc.mods.sodium.client.render.vertex.buffer.DirectBufferBuilder;
 import net.irisshaders.batchedentityrendering.impl.ordering.GraphTranslucencyRenderOrderManager;
 import net.irisshaders.batchedentityrendering.impl.ordering.RenderOrderManager;
 import net.irisshaders.iris.layer.WrappingMultiBufferSource;
@@ -92,12 +90,12 @@ public class FullyBufferedMultiBufferSource extends MultiBufferSource.BufferSour
 
 		VertexConsumer buffer = builders[affinity].getBuffer(renderType);
 
-		if (buffer instanceof BufferBuilderExtension bufferBuilder) {
-			DirectBufferBuilder replacement = bufferBuilder.sodium$getDelegate();
-			if (replacement != null) {
-				return replacement;
-			}
-		}
+		// if (buffer instanceof BufferBuilderExtension bufferBuilder) {
+		// 	DirectBufferBuilder replacement = bufferBuilder.sodium$getDelegate();
+		// 	if (replacement != null) {
+		// 		return replacement;
+		// 	}
+		// }
 
 		return buffer;
 	}

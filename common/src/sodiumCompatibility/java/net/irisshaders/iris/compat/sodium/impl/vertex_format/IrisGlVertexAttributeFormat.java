@@ -5,4 +5,8 @@ import net.irisshaders.iris.compat.sodium.mixin.vertex_format.GlVertexAttributeF
 import org.lwjgl.opengl.GL20C;
 
 public class IrisGlVertexAttributeFormat {
+	public static final GlVertexAttributeFormat BYTE =
+			GlVertexAttributeFormatAccessor.createGlVertexAttributeFormat(GL20C.GL_BYTE, 1);
+	public static final GlVertexAttributeFormat SHORT = GlVertexAttributeFormatAccessor.createGlVertexAttributeFormat(GL20C.GL_SHORT, 2);
+	public static final GlVertexAttributeFormat UNSIGNED_2_10_10_10_REV = GlVertexAttributeFormatAccessor.createGlVertexAttributeFormat(GL20C.GL_UNSIGNED_INT_2_10_10_10_REV, 4);
 }

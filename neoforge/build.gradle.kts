@@ -6,7 +6,7 @@ plugins {
 }
 
 base {
-    archivesName = "iris-neoforge-1.20.5"
+    archivesName = "iris-neoforge-1.20.4"
 }
 
 val MINECRAFT_VERSION: String by rootProject.extra
@@ -106,7 +106,7 @@ dependencies {
     jarJar("org.anarres:jcpp:[1.4.14,1.4.15]") {
         isTransitive = false
     }
-    implementation(files(rootDir.resolve("custom_sodium").resolve("sodium-neoforge-1.20.6-0.6.0-snapshot+mc1.20.6-local-modonly.jar")))
+    implementation(files(rootDir.resolve("custom_sodium").resolve("sodium-neoforge-1.20.4-0.6.0-snapshot+mc1.20.4-local-modonly.jar")))
 
     compileOnly("maven.modrinth:immersiveengineering:11mMmtHT")
     compileOnly(files(rootDir.resolve("DHApi.jar")))
@@ -137,7 +137,7 @@ tasks.withType<ProcessResources>().matching(notNeoTask).configureEach {
     from(project(":common").sourceSets.getByName("sodiumCompatibility").resources)
 }
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 publishing {
     publications {

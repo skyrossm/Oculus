@@ -115,36 +115,36 @@ public class ShaderPackSelectionList extends IrisObjectSelectionList<ShaderPackS
 
 	private static final ResourceLocation MENU_LIST_BACKGROUND = new ResourceLocation("textures/gui/menu_background.png");
 
-	@Override
-	protected void renderListBackground(GuiGraphics pAbstractSelectionList0) {
-		if (screen.listTransition.getAsFloat() < 0.02f) return;
-		RenderSystem.enableBlend();
-		RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, screen.listTransition.getAsFloat());
-		pAbstractSelectionList0.blit(
-			MENU_LIST_BACKGROUND,
-			this.getX(),
-			this.getY() - 2,
-			(float)this.getRight(),
-			(float)(this.getBottom() + (int)this.getScrollAmount()),
-			this.getWidth(),
-			this.getHeight(),
-			32,
-			32
-		);
+//	@Override
+//	protected void renderListBackground(GuiGraphics pAbstractSelectionList0) {
+//		if (screen.listTransition.getAsFloat() < 0.02f) return;
+//		RenderSystem.enableBlend();
+//		RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, screen.listTransition.getAsFloat());
+//		pAbstractSelectionList0.blit(
+//			MENU_LIST_BACKGROUND,
+//			this.getX(),
+//			this.getY() - 2,
+//			(float)this.getRight(),
+//			(float)(this.getBottom() + (int)this.getScrollAmount()),
+//			this.getWidth(),
+//			this.getHeight(),
+//			32,
+//			32
+//		);
+//
+//		RenderSystem.disableBlend();
+//		RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
+//	}
 
-		RenderSystem.disableBlend();
-		RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
-	}
-
-	@Override
-	protected void renderListSeparators(GuiGraphics pAbstractSelectionList0) {
-		RenderSystem.enableBlend();
-		RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, screen.listTransition.getAsFloat());
-		pAbstractSelectionList0.blit(CreateWorldScreen.HEADER_SEPARATOR, this.getX(), this.getY() - 2, 0.0F, 0.0F, this.getWidth(), 2, 32, 2);
-		pAbstractSelectionList0.blit(CreateWorldScreen.FOOTER_SEPARATOR, this.getX(), this.getBottom(), 0.0F, 0.0F, this.getWidth(), 2, 32, 2);
-		RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
-		RenderSystem.disableBlend();
-	}
+//	@Override
+//	protected void renderListSeparators(GuiGraphics pAbstractSelectionList0) {
+//		RenderSystem.enableBlend();
+//		RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, screen.listTransition.getAsFloat());
+//		pAbstractSelectionList0.blit(CreateWorldScreen.HEADER_SEPERATOR, this.getX(), this.getY() - 2, 0.0F, 0.0F, this.getWidth(), 2, 32, 2);
+//		pAbstractSelectionList0.blit(CreateWorldScreen.FOOTER_SEPERATOR, this.getX(), this.getBottom(), 0.0F, 0.0F, this.getWidth(), 2, 32, 2);
+//		RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
+//		RenderSystem.disableBlend();
+//	}
 
 	@Override
 	public int getRowWidth() {
